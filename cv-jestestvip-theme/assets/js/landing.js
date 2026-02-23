@@ -10,11 +10,8 @@
     // ------------------------------------------------------------------
     const header = document.getElementById('site-header');
     if (header) {
-        let lastScroll = 0;
         window.addEventListener('scroll', function () {
-            const y = window.scrollY;
-            header.classList.toggle('is-scrolled', y > 10);
-            lastScroll = y;
+            header.classList.toggle('is-scrolled', window.scrollY > 10);
         }, { passive: true });
     }
 
@@ -29,7 +26,6 @@
             navLinks.classList.toggle('is-open');
         });
 
-        // Close on link click.
         navLinks.querySelectorAll('a').forEach(function (link) {
             link.addEventListener('click', function () {
                 navLinks.classList.remove('is-open');
@@ -75,7 +71,6 @@
         if (autoPlayTimer) clearInterval(autoPlayTimer);
     }
 
-    // Step tabs.
     stepTabs.forEach(function (tab) {
         tab.addEventListener('click', function () {
             goToSlide(parseInt(tab.dataset.step));
@@ -84,7 +79,6 @@
         });
     });
 
-    // Dots.
     dots.forEach(function (dot) {
         dot.addEventListener('click', function () {
             goToSlide(parseInt(dot.dataset.index));
@@ -93,7 +87,6 @@
         });
     });
 
-    // Arrows.
     if (prevBtn) {
         prevBtn.addEventListener('click', function () {
             goToSlide(currentSlide - 1);
@@ -110,7 +103,6 @@
         });
     }
 
-    // Start autoplay if slider exists.
     if (slides.length > 0) {
         startAutoPlay();
     }
@@ -120,7 +112,7 @@
     // ------------------------------------------------------------------
     function initReveal() {
         const elements = document.querySelectorAll(
-            '.benefit-card, .template-preview-card, .pricing-card, .testimonial-card, .faq-item, .slide-content'
+            '.benefit-card, .template-preview-card, .pricing-card, .faq-item, .slide-content, .ai-format, .story__inner'
         );
 
         elements.forEach(function (el) {
