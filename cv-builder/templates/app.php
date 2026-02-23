@@ -38,8 +38,64 @@ $templates    = \CvBuilder\CV\Generator::TEMPLATES;
         </div>
     </header>
 
+    <!-- ===== INTRO: CHOOSE YOUR PATH ===== -->
+    <section class="cvb-intro" id="cvb-intro">
+        <h2 class="cvb-intro__title">Jak chcesz zacząć?</h2>
+        <p class="cvb-intro__desc">Możesz wrzucić stare CV i pozwolić AI przerobić je na nowe, albo wypełnić dane sam.</p>
+
+        <div class="cvb-intro__cards">
+            <!-- AI PATH -->
+            <div class="cvb-intro__card cvb-intro__card--ai" data-action="choose-ai">
+                <div class="cvb-intro__card-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                </div>
+                <h3>AI zrobi to za mnie</h3>
+                <p>Wrzuć stare CV (PDF, zdjęcie, Word) albo wklej tekst. AI wyciągnie dane i ułoży je w nowym szablonie.</p>
+
+                <div class="cvb-intro__upload-zone" id="cvb-ai-drop-zone">
+                    <input type="file" id="cvb-ai-file" accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.txt" class="cvb-input--file" />
+                    <label for="cvb-ai-file" class="cvb-intro__upload-label">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        <span>Przeciągnij plik tutaj lub kliknij</span>
+                        <small>PDF, JPG, Word, tekst</small>
+                    </label>
+                </div>
+
+                <div class="cvb-intro__or">lub zaimportuj z</div>
+
+                <div class="cvb-intro__social-btns">
+                    <button type="button" class="cvb-btn cvb-btn--social cvb-btn--linkedin" data-action="social-auth" data-provider="linkedin">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="#0A66C2"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                        LinkedIn
+                    </button>
+                    <button type="button" class="cvb-btn cvb-btn--social cvb-btn--google" data-action="social-auth" data-provider="google">
+                        <svg viewBox="0 0 24 24" width="18" height="18"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Google
+                    </button>
+                    <button type="button" class="cvb-btn cvb-btn--social cvb-btn--facebook" data-action="social-auth" data-provider="facebook">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Facebook
+                    </button>
+                </div>
+            </div>
+
+            <!-- MANUAL PATH -->
+            <div class="cvb-intro__card cvb-intro__card--manual" data-action="choose-manual">
+                <div class="cvb-intro__card-icon">
+                    <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                </div>
+                <h3>Sam wypełnię dane</h3>
+                <p>Wybierz szablon, wypełnij formularz krok po kroku. Klasyczna droga, pełna kontrola.</p>
+                <button type="button" class="cvb-btn cvb-btn--outline cvb-btn--lg cvb-btn--full" data-action="start-manual">
+                    Zacznij wypełniać
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== STEPS INDICATOR ===== -->
-    <nav class="cvb-steps" aria-label="Kroki tworzenia CV">
+    <nav class="cvb-steps" aria-label="Kroki tworzenia CV" style="display:none;">
         <ol class="cvb-steps__list">
             <li class="cvb-steps__item is-active" data-step="1">
                 <span class="cvb-steps__number">1</span>
@@ -275,7 +331,7 @@ $templates    = \CvBuilder\CV\Generator::TEMPLATES;
     </section>
 
     <!-- ===== NAVIGATION BUTTONS ===== -->
-    <div class="cvb-nav-buttons">
+    <div class="cvb-nav-buttons" style="display:none;">
         <button type="button" class="cvb-btn cvb-btn--ghost" data-action="prev-step" style="display:none;">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
             Wstecz

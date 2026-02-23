@@ -152,6 +152,18 @@
         app.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
+    function hideIntro() {
+        const intro = $('#cvb-intro', app);
+        const stepsNav = $('.cvb-steps', app);
+        const navBtns = $('.cvb-nav-buttons', app);
+
+        if (intro) intro.style.display = 'none';
+        if (stepsNav) stepsNav.style.display = '';
+        if (navBtns) navBtns.style.display = '';
+
+        goToStep(1);
+    }
+
     // ------------------------------------------------------------------
     // Data collection from forms
     // ------------------------------------------------------------------
@@ -862,6 +874,11 @@
                 case 'social-auth':
                     handleSocialAuth(action.dataset.provider);
                     break;
+
+                case 'start-manual':
+                case 'choose-manual':
+                    hideIntro();
+                    break;
             }
         });
 
@@ -893,6 +910,41 @@
                 state.data.rodo = rodoCheckbox.checked;
             });
         }
+
+        // AI file upload (intro screen).
+        const aiFileInput = document.getElementById('cvb-ai-file');
+        if (aiFileInput) {
+            aiFileInput.addEventListener('change', function () {
+                if (this.files.length > 0) {
+                    toast('AI import jest w przygotowaniu. Na razie wypełnij dane ręcznie.', 'info');
+                    hideIntro();
+                }
+            });
+        }
+
+        // Drag and drop for AI upload zone.
+        const dropZone = document.getElementById('cvb-ai-drop-zone');
+        if (dropZone) {
+            ['dragenter', 'dragover'].forEach(function (evt) {
+                dropZone.addEventListener(evt, function (e) {
+                    e.preventDefault();
+                    dropZone.classList.add('is-dragover');
+                });
+            });
+            ['dragleave', 'drop'].forEach(function (evt) {
+                dropZone.addEventListener(evt, function (e) {
+                    e.preventDefault();
+                    dropZone.classList.remove('is-dragover');
+                });
+            });
+            dropZone.addEventListener('drop', function (e) {
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    toast('AI import jest w przygotowaniu. Na razie wypełnij dane ręcznie.', 'info');
+                    hideIntro();
+                }
+            });
+        }
     }
 
     // ------------------------------------------------------------------
@@ -907,6 +959,16 @@
         renderTemplatePreviews();
         handleUrlParams();
         updateStepUI();
+
+        // If intro exists, hide steps and nav until user chooses.
+        const introSection = $('#cvb-intro', app);
+        if (introSection) {
+            const stepsNav = $('.cvb-steps', app);
+            const navBtns = $('.cvb-nav-buttons', app);
+            if (stepsNav) stepsNav.style.display = 'none';
+            if (navBtns) navBtns.style.display = 'none';
+        }
+
         loadExistingCV();
     }
 

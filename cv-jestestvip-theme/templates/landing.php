@@ -95,6 +95,30 @@ $app_url = cvl_get_app_url();
         </div>
 
         <div class="ai-import__grid">
+            <!-- Social import - highlighted -->
+            <div class="ai-import__social">
+                <h3 class="ai-import__social-title">Najszybciej? Zaloguj się i gotowe.</h3>
+                <p class="ai-import__social-desc">Kliknij przycisk, dane ściągną się automatycznie: imię, nazwisko, stanowisko, doświadczenie, wykształcenie. Zero przepisywania.</p>
+                <div class="ai-import__social-buttons">
+                    <a href="<?php echo esc_url( $app_url ); ?>" class="btn btn--social btn--social-linkedin btn--lg">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                        Importuj z LinkedIn
+                    </a>
+                    <a href="<?php echo esc_url( $app_url ); ?>" class="btn btn--social btn--social-google btn--lg">
+                        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        Importuj z Google
+                    </a>
+                    <a href="<?php echo esc_url( $app_url ); ?>" class="btn btn--social btn--social-facebook btn--lg">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Importuj z Facebook
+                    </a>
+                </div>
+            </div>
+
+            <div class="ai-import__divider">
+                <span>albo wrzuć plik</span>
+            </div>
+
             <div class="ai-import__formats">
                 <div class="ai-format">
                     <div class="ai-format__icon">
@@ -116,13 +140,6 @@ $app_url = cvl_get_app_url();
                     </div>
                     <h4>Word / tekst</h4>
                     <p>Skopiuj tekst albo wrzuć .docx.</p>
-                </div>
-                <div class="ai-format">
-                    <div class="ai-format__icon">
-                        <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    </div>
-                    <h4>LinkedIn</h4>
-                    <p>Zaloguj się, dane się ściągną same.</p>
                 </div>
             </div>
 
@@ -331,47 +348,383 @@ $app_url = cvl_get_app_url();
         </div>
 
         <div class="templates-grid">
-            <?php
-            $templates = [
-                [ 'id' => 'classic', 'name' => 'Klasyczny', 'color' => '#3b2a1a', 'accent' => '#f0b527', 'desc' => 'Ciepłe brązy i złoto. Pasuje wszędzie.' ],
-                [ 'id' => 'modern', 'name' => 'Nowoczesny', 'color' => '#1e40af', 'accent' => '#3b82f6', 'desc' => 'Dwie kolumny, niebieski akcent.' ],
-                [ 'id' => 'creative', 'name' => 'Kreatywny', 'color' => '#7c3aed', 'accent' => '#a78bfa', 'desc' => 'Dla designerów i marketerów.' ],
-                [ 'id' => 'minimal', 'name' => 'Minimalistyczny', 'color' => '#f9fafb', 'accent' => '#374151', 'desc' => 'Dużo bieli, zero bałaganu.' ],
-                [ 'id' => 'professional', 'name' => 'Profesjonalny', 'color' => '#1f2937', 'accent' => '#6b7280', 'desc' => 'Ciemny sidebar. Korporacyjny styl.' ],
-                [ 'id' => 'executive', 'name' => 'Elegancki', 'color' => '#44403c', 'accent' => '#a8a29e', 'desc' => 'Seryfowe fonty. Dla kadry zarządzającej.' ],
-                [ 'id' => 'tech', 'name' => 'Techniczny', 'color' => '#0f172a', 'accent' => '#38bdf8', 'desc' => 'Dark mode, monospace. Dla programistów.' ],
-                [ 'id' => 'academic', 'name' => 'Akademicki', 'color' => '#1e3a5f', 'accent' => '#60a5fa', 'desc' => 'Tradycyjny układ. Dla naukowców.' ],
-                [ 'id' => 'bold', 'name' => 'Odważny', 'color' => '#dc2626', 'accent' => '#fca5a5', 'desc' => 'Duża typografia, czerwone akcenty.' ],
-                [ 'id' => 'nordic', 'name' => 'Skandynawski', 'color' => '#f0fdf4', 'accent' => '#22c55e', 'desc' => 'Zielone akcenty, spokojny styl.' ],
-            ];
-            foreach ( $templates as $t ) :
-            ?>
-                <div class="template-preview-card">
-                    <div class="template-preview-card__thumb">
-                        <div style="width:100%;height:100%;display:flex;flex-direction:column;">
-                            <div style="background:<?php echo esc_attr( $t['color'] ); ?>;height:35%;padding:10px;display:flex;align-items:center;gap:8px;">
-                                <div style="width:28px;height:28px;border-radius:50%;background:<?php echo esc_attr( $t['accent'] ); ?>;"></div>
-                                <div>
-                                    <div style="width:60px;height:6px;background:rgba(255,255,255,.7);border-radius:3px;margin-bottom:4px;"></div>
-                                    <div style="width:40px;height:4px;background:rgba(255,255,255,.4);border-radius:2px;"></div>
-                                </div>
+
+            <!-- 1. Classic: Left sidebar with circle photo + name, right content -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;display:flex;flex-direction:row;">
+                        <!-- Left sidebar 35% -->
+                        <div style="width:35%;background:#3b2a1a;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+                            <div style="width:28px;height:28px;border-radius:50%;background:#f0b527;margin-top:6px;"></div>
+                            <div style="width:80%;height:5px;background:rgba(255,255,255,.7);border-radius:2px;"></div>
+                            <div style="width:60%;height:3px;background:rgba(255,255,255,.4);border-radius:2px;"></div>
+                            <div style="width:70%;height:1px;background:rgba(240,181,39,.3);margin:4px 0;"></div>
+                            <div style="width:75%;height:3px;background:rgba(255,255,255,.35);border-radius:2px;"></div>
+                            <div style="width:65%;height:3px;background:rgba(255,255,255,.35);border-radius:2px;"></div>
+                            <div style="width:70%;height:3px;background:rgba(255,255,255,.35);border-radius:2px;"></div>
+                            <div style="width:70%;height:1px;background:rgba(240,181,39,.3);margin:4px 0;"></div>
+                            <div style="width:60%;height:3px;background:rgba(255,255,255,.35);border-radius:2px;"></div>
+                            <div style="width:75%;height:3px;background:rgba(255,255,255,.35);border-radius:2px;"></div>
+                        </div>
+                        <!-- Right content 65% -->
+                        <div style="flex:1;padding:12px 8px;background:#fff;display:flex;flex-direction:column;gap:4px;">
+                            <div style="width:60%;height:5px;background:#3b2a1a;border-radius:2px;margin-bottom:2px;"></div>
+                            <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:80%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:85%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:50%;height:5px;background:#f0b527;border-radius:2px;margin-top:6px;"></div>
+                            <div style="width:95%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:75%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:88%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:45%;height:5px;background:#f0b527;border-radius:2px;margin-top:6px;"></div>
+                            <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:70%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Klasyczny</h4>
+                    <p>Ciep&#322;e br&#261;zy i z&#322;oto. Pasuje wsz&#281;dzie.</p>
+                </div>
+            </div>
+
+            <!-- 2. Modern: Full-width blue header, two 50/50 columns below -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;display:flex;flex-direction:column;">
+                        <!-- Full-width header bar -->
+                        <div style="background:#1e40af;padding:10px 8px;">
+                            <div style="width:55%;height:6px;background:rgba(255,255,255,.8);border-radius:2px;margin-bottom:4px;"></div>
+                            <div style="width:80%;height:3px;background:rgba(255,255,255,.35);border-radius:2px;"></div>
+                        </div>
+                        <!-- Two columns 50/50 -->
+                        <div style="flex:1;display:flex;flex-direction:row;background:#fff;">
+                            <div style="width:50%;padding:8px 6px;border-right:1px solid #e5e7eb;display:flex;flex-direction:column;gap:4px;">
+                                <div style="width:70%;height:4px;background:#3b82f6;border-radius:2px;"></div>
+                                <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:75%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:85%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:65%;height:4px;background:#3b82f6;border-radius:2px;margin-top:4px;"></div>
+                                <div style="width:80%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
                             </div>
-                            <div style="flex:1;padding:10px;background:#fff;">
-                                <div style="width:70%;height:5px;background:#d1d5db;border-radius:2px;margin-bottom:8px;"></div>
-                                <div style="width:90%;height:4px;background:#e5e7eb;border-radius:2px;margin-bottom:4px;"></div>
-                                <div style="width:80%;height:4px;background:#e5e7eb;border-radius:2px;margin-bottom:8px;"></div>
-                                <div style="width:50%;height:5px;background:<?php echo esc_attr( $t['accent'] ); ?>;border-radius:2px;margin-bottom:6px;"></div>
-                                <div style="width:85%;height:4px;background:#e5e7eb;border-radius:2px;margin-bottom:4px;"></div>
-                                <div style="width:75%;height:4px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:50%;padding:8px 6px;display:flex;flex-direction:column;gap:4px;">
+                                <div style="width:75%;height:4px;background:#3b82f6;border-radius:2px;"></div>
+                                <div style="width:85%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:70%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:60%;height:4px;background:#3b82f6;border-radius:2px;margin-top:4px;"></div>
+                                <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:80%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                                <div style="width:75%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="template-preview-card__info">
-                        <h4><?php echo esc_html( $t['name'] ); ?></h4>
-                        <p><?php echo esc_html( $t['desc'] ); ?></p>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Nowoczesny</h4>
+                    <p>Dwie kolumny, niebieski akcent.</p>
+                </div>
+            </div>
+
+            <!-- 3. Creative: Gradient header, centered circle overlapping boundary, centered content -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;display:flex;flex-direction:column;position:relative;background:#fff;">
+                        <!-- Gradient header -->
+                        <div style="background:linear-gradient(135deg,#7c3aed,#a78bfa);height:30%;"></div>
+                        <!-- Circle photo overlapping -->
+                        <div style="position:absolute;top:22%;left:50%;transform:translateX(-50%);width:30px;height:30px;border-radius:50%;background:#e9d5ff;border:3px solid #fff;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,.15);"></div>
+                        <!-- Content below, centered -->
+                        <div style="flex:1;padding:22px 10px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                            <div style="width:50%;height:5px;background:#7c3aed;border-radius:2px;"></div>
+                            <div style="width:65%;height:3px;background:#d1d5db;border-radius:2px;"></div>
+                            <div style="width:40%;height:1px;background:#a78bfa;margin:4px 0;"></div>
+                            <div style="width:80%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:70%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:75%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:40%;height:1px;background:#a78bfa;margin:4px 0;"></div>
+                            <div style="width:85%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:65%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                        </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+                <div class="template-preview-card__info">
+                    <h4>Kreatywny</h4>
+                    <p>Dla designer&#243;w i marketer&#243;w.</p>
+                </div>
+            </div>
+
+            <!-- 4. Minimal: No colored header, thin lines, lots of white space -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;background:#f9fafb;padding:14px 10px;display:flex;flex-direction:column;gap:6px;">
+                        <!-- Name area -->
+                        <div style="width:45%;height:5px;background:#374151;border-radius:1px;"></div>
+                        <div style="width:65%;height:3px;background:#9ca3af;border-radius:1px;"></div>
+                        <div style="width:100%;height:1px;background:#d1d5db;margin:4px 0;"></div>
+                        <!-- Section 1 -->
+                        <div style="width:35%;height:4px;background:#374151;border-radius:1px;"></div>
+                        <div style="width:85%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                        <div style="width:75%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                        <div style="width:100%;height:1px;background:#d1d5db;margin:4px 0;"></div>
+                        <!-- Section 2 -->
+                        <div style="width:30%;height:4px;background:#374151;border-radius:1px;"></div>
+                        <div style="width:90%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                        <div style="width:70%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                        <div style="width:100%;height:1px;background:#d1d5db;margin:4px 0;"></div>
+                        <!-- Section 3 -->
+                        <div style="width:40%;height:4px;background:#374151;border-radius:1px;"></div>
+                        <div style="width:80%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                        <div style="width:60%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Minimalistyczny</h4>
+                    <p>Du&#380;o bieli, zero ba&#322;aganu.</p>
+                </div>
+            </div>
+
+            <!-- 5. Professional: Wide dark sidebar left (45%), narrow content right -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;display:flex;flex-direction:row;">
+                        <!-- Wide dark sidebar 45% -->
+                        <div style="width:45%;background:#1f2937;padding:12px 6px;display:flex;flex-direction:column;align-items:center;gap:5px;">
+                            <div style="width:32px;height:32px;border-radius:50%;background:#4b5563;margin-bottom:2px;"></div>
+                            <div style="width:75%;height:5px;background:rgba(255,255,255,.6);border-radius:2px;"></div>
+                            <div style="width:55%;height:3px;background:rgba(255,255,255,.3);border-radius:2px;"></div>
+                            <div style="width:80%;height:1px;background:#6b7280;margin:2px 0;"></div>
+                            <div style="width:70%;height:3px;background:rgba(255,255,255,.3);border-radius:2px;"></div>
+                            <div style="width:60%;height:3px;background:rgba(255,255,255,.3);border-radius:2px;"></div>
+                            <div style="width:80%;height:1px;background:#6b7280;margin:2px 0;"></div>
+                            <div style="width:65%;height:3px;background:rgba(255,255,255,.3);border-radius:2px;"></div>
+                            <div style="width:75%;height:3px;background:rgba(255,255,255,.3);border-radius:2px;"></div>
+                            <div style="width:55%;height:3px;background:rgba(255,255,255,.3);border-radius:2px;"></div>
+                        </div>
+                        <!-- Narrow content right -->
+                        <div style="flex:1;padding:12px 6px;background:#fff;display:flex;flex-direction:column;gap:4px;">
+                            <div style="width:65%;height:4px;background:#1f2937;border-radius:2px;"></div>
+                            <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:80%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:55%;height:4px;background:#6b7280;border-radius:2px;margin-top:4px;"></div>
+                            <div style="width:85%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:70%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:50%;height:4px;background:#6b7280;border-radius:2px;margin-top:4px;"></div>
+                            <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:75%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Profesjonalny</h4>
+                    <p>Ciemny sidebar. Korporacyjny styl.</p>
+                </div>
+            </div>
+
+            <!-- 6. Executive: Thin line at top, large centered name block, horizontal rule, content -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;background:#fff;display:flex;flex-direction:column;">
+                        <!-- Thin colored line at very top -->
+                        <div style="width:100%;height:3px;background:#44403c;"></div>
+                        <!-- Large centered name block -->
+                        <div style="padding:14px 10px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;">
+                            <div style="width:55%;height:7px;background:#44403c;border-radius:1px;"></div>
+                            <div style="width:70%;height:3px;background:#a8a29e;border-radius:1px;"></div>
+                        </div>
+                        <!-- Horizontal rule -->
+                        <div style="width:80%;height:1px;background:#a8a29e;align-self:center;margin:2px auto;"></div>
+                        <!-- Content below -->
+                        <div style="flex:1;padding:8px 10px;display:flex;flex-direction:column;gap:4px;">
+                            <div style="width:35%;height:4px;background:#44403c;border-radius:1px;"></div>
+                            <div style="width:90%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                            <div style="width:80%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                            <div style="width:85%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                            <div style="width:30%;height:4px;background:#44403c;border-radius:1px;margin-top:4px;"></div>
+                            <div style="width:75%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                            <div style="width:90%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                            <div style="width:35%;height:4px;background:#44403c;border-radius:1px;margin-top:4px;"></div>
+                            <div style="width:85%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                            <div style="width:70%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Elegancki</h4>
+                    <p>Seryfowe fonty. Dla kadry zarz&#261;dzaj&#261;cej.</p>
+                </div>
+            </div>
+
+            <!-- 7. Tech: Full dark background, cyan accent lines, terminal feel -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;background:#0f172a;padding:10px 8px;display:flex;flex-direction:column;gap:5px;">
+                        <!-- Terminal-style header -->
+                        <div style="display:flex;gap:3px;margin-bottom:2px;">
+                            <div style="width:6px;height:6px;border-radius:50%;background:#ef4444;"></div>
+                            <div style="width:6px;height:6px;border-radius:50%;background:#eab308;"></div>
+                            <div style="width:6px;height:6px;border-radius:50%;background:#22c55e;"></div>
+                        </div>
+                        <!-- Cursor / name line -->
+                        <div style="display:flex;align-items:center;gap:4px;">
+                            <div style="width:8px;height:5px;background:#38bdf8;border-radius:1px;"></div>
+                            <div style="width:55%;height:5px;background:rgba(255,255,255,.7);border-radius:1px;"></div>
+                        </div>
+                        <div style="width:70%;height:3px;background:rgba(56,189,248,.3);border-radius:1px;"></div>
+                        <!-- Content lines -->
+                        <div style="width:45%;height:4px;background:#38bdf8;border-radius:1px;margin-top:4px;"></div>
+                        <div style="width:85%;height:3px;background:rgba(255,255,255,.2);border-radius:1px;"></div>
+                        <div style="width:75%;height:3px;background:rgba(255,255,255,.2);border-radius:1px;"></div>
+                        <div style="width:40%;height:4px;background:#38bdf8;border-radius:1px;margin-top:4px;"></div>
+                        <div style="width:90%;height:3px;background:rgba(255,255,255,.2);border-radius:1px;"></div>
+                        <div style="width:65%;height:3px;background:rgba(255,255,255,.2);border-radius:1px;"></div>
+                        <div style="width:80%;height:3px;background:rgba(255,255,255,.2);border-radius:1px;"></div>
+                        <!-- Blinking cursor line -->
+                        <div style="display:flex;align-items:center;gap:3px;margin-top:auto;">
+                            <div style="width:8px;height:5px;background:#38bdf8;border-radius:1px;"></div>
+                            <div style="width:2px;height:8px;background:#38bdf8;animation:none;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Techniczny</h4>
+                    <p>Dark mode, monospace. Dla programist&#243;w.</p>
+                </div>
+            </div>
+
+            <!-- 8. Academic: No sidebar, date column left (narrow), content right -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;background:#fff;display:flex;flex-direction:column;">
+                        <!-- Top name area -->
+                        <div style="padding:10px 8px 6px;border-bottom:2px solid #1e3a5f;">
+                            <div style="width:50%;height:6px;background:#1e3a5f;border-radius:1px;margin-bottom:3px;"></div>
+                            <div style="width:75%;height:3px;background:#9ca3af;border-radius:1px;"></div>
+                        </div>
+                        <!-- Date-column | content layout -->
+                        <div style="flex:1;padding:6px 8px;display:flex;flex-direction:column;gap:6px;">
+                            <!-- Section heading -->
+                            <div style="width:40%;height:4px;background:#1e3a5f;border-radius:1px;"></div>
+                            <!-- Row 1: date | desc -->
+                            <div style="display:flex;gap:6px;align-items:flex-start;">
+                                <div style="width:25%;display:flex;flex-direction:column;gap:2px;flex-shrink:0;">
+                                    <div style="width:100%;height:3px;background:#60a5fa;border-radius:1px;"></div>
+                                </div>
+                                <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+                                    <div style="width:90%;height:3px;background:#d1d5db;border-radius:1px;"></div>
+                                    <div style="width:75%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                                </div>
+                            </div>
+                            <!-- Row 2: date | desc -->
+                            <div style="display:flex;gap:6px;align-items:flex-start;">
+                                <div style="width:25%;display:flex;flex-direction:column;gap:2px;flex-shrink:0;">
+                                    <div style="width:100%;height:3px;background:#60a5fa;border-radius:1px;"></div>
+                                </div>
+                                <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+                                    <div style="width:85%;height:3px;background:#d1d5db;border-radius:1px;"></div>
+                                    <div style="width:70%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                                </div>
+                            </div>
+                            <!-- Section 2 heading -->
+                            <div style="width:35%;height:4px;background:#1e3a5f;border-radius:1px;margin-top:2px;"></div>
+                            <!-- Row 3: date | desc -->
+                            <div style="display:flex;gap:6px;align-items:flex-start;">
+                                <div style="width:25%;display:flex;flex-direction:column;gap:2px;flex-shrink:0;">
+                                    <div style="width:100%;height:3px;background:#60a5fa;border-radius:1px;"></div>
+                                </div>
+                                <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+                                    <div style="width:80%;height:3px;background:#d1d5db;border-radius:1px;"></div>
+                                    <div style="width:65%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                                </div>
+                            </div>
+                            <!-- Row 4: date | desc -->
+                            <div style="display:flex;gap:6px;align-items:flex-start;">
+                                <div style="width:25%;display:flex;flex-direction:column;gap:2px;flex-shrink:0;">
+                                    <div style="width:100%;height:3px;background:#60a5fa;border-radius:1px;"></div>
+                                </div>
+                                <div style="flex:1;display:flex;flex-direction:column;gap:2px;">
+                                    <div style="width:90%;height:3px;background:#d1d5db;border-radius:1px;"></div>
+                                    <div style="width:60%;height:3px;background:#e5e7eb;border-radius:1px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Akademicki</h4>
+                    <p>Tradycyjny uk&#322;ad. Dla naukowc&#243;w.</p>
+                </div>
+            </div>
+
+            <!-- 9. Bold: Big red block header 40%, large white circle, card-style sections -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;display:flex;flex-direction:column;position:relative;background:#fef2f2;">
+                        <!-- Big red header 40% -->
+                        <div style="background:#dc2626;height:40%;display:flex;align-items:center;justify-content:center;">
+                            <div style="width:36px;height:36px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.2);"></div>
+                        </div>
+                        <!-- Card-style sections below -->
+                        <div style="flex:1;padding:8px 6px;display:flex;flex-direction:column;gap:5px;">
+                            <!-- Card 1 -->
+                            <div style="background:#fff;border-radius:4px;padding:5px 6px;box-shadow:0 1px 3px rgba(0,0,0,.08);">
+                                <div style="width:50%;height:4px;background:#dc2626;border-radius:2px;margin-bottom:3px;"></div>
+                                <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;margin-bottom:2px;"></div>
+                                <div style="width:75%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div style="background:#fff;border-radius:4px;padding:5px 6px;box-shadow:0 1px 3px rgba(0,0,0,.08);">
+                                <div style="width:45%;height:4px;background:#dc2626;border-radius:2px;margin-bottom:3px;"></div>
+                                <div style="width:85%;height:3px;background:#e5e7eb;border-radius:2px;margin-bottom:2px;"></div>
+                                <div style="width:70%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div style="background:#fff;border-radius:4px;padding:5px 6px;box-shadow:0 1px 3px rgba(0,0,0,.08);">
+                                <div style="width:55%;height:4px;background:#fca5a5;border-radius:2px;margin-bottom:3px;"></div>
+                                <div style="width:80%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Odwa&#380;ny</h4>
+                    <p>Du&#380;a typografia, czerwone akcenty.</p>
+                </div>
+            </div>
+
+            <!-- 10. Nordic: Light green bg, rounded cards for sections, circular photo with green border -->
+            <div class="template-preview-card">
+                <div class="template-preview-card__thumb">
+                    <div style="width:100%;height:100%;background:#f0fdf4;padding:10px 6px;display:flex;flex-direction:column;align-items:center;gap:5px;">
+                        <!-- Circular photo with green border -->
+                        <div style="width:30px;height:30px;border-radius:50%;background:#dcfce7;border:3px solid #22c55e;margin-bottom:2px;"></div>
+                        <div style="width:50%;height:5px;background:#16a34a;border-radius:2px;"></div>
+                        <div style="width:65%;height:3px;background:#86efac;border-radius:2px;"></div>
+                        <!-- Section card 1 -->
+                        <div style="width:92%;background:#fff;border-radius:6px;padding:5px 6px;display:flex;flex-direction:column;gap:2px;box-shadow:0 1px 3px rgba(0,0,0,.05);">
+                            <div style="width:40%;height:4px;background:#22c55e;border-radius:2px;"></div>
+                            <div style="width:85%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:70%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                        </div>
+                        <!-- Section card 2 -->
+                        <div style="width:92%;background:#fff;border-radius:6px;padding:5px 6px;display:flex;flex-direction:column;gap:2px;box-shadow:0 1px 3px rgba(0,0,0,.05);">
+                            <div style="width:35%;height:4px;background:#22c55e;border-radius:2px;"></div>
+                            <div style="width:90%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:75%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                        </div>
+                        <!-- Section card 3 -->
+                        <div style="width:92%;background:#fff;border-radius:6px;padding:5px 6px;display:flex;flex-direction:column;gap:2px;box-shadow:0 1px 3px rgba(0,0,0,.05);">
+                            <div style="width:45%;height:4px;background:#22c55e;border-radius:2px;"></div>
+                            <div style="width:80%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                            <div style="width:65%;height:3px;background:#e5e7eb;border-radius:2px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template-preview-card__info">
+                    <h4>Skandynawski</h4>
+                    <p>Zielone akcenty, spokojny styl.</p>
+                </div>
+            </div>
         </div>
 
         <div class="section-cta">
@@ -428,7 +781,29 @@ $app_url = cvl_get_app_url();
                     <li class="is-included">Wsparcie e-mail</li>
                 </ul>
                 <a href="<?php echo esc_url( $app_url ); ?>" class="btn btn--primary btn--full btn--lg">Kup dostęp &ndash; 29 zł</a>
-                <p class="pricing-card__note">BLIK &bull; Karta &bull; Przelewy24 &bull; Bezpiecznie przez Stripe</p>
+                <div class="pricing-card__payments">
+                    <svg viewBox="0 0 62 32" width="52" height="27" xmlns="http://www.w3.org/2000/svg" class="payment-logo">
+                        <rect width="62" height="32" rx="4" fill="#000"/>
+                        <circle cx="12" cy="16" r="5.5" fill="#E6186C"/>
+                        <circle cx="12" cy="16" r="2.5" fill="#fff"/>
+                        <text x="22" y="21" fill="#fff" font-family="Arial,sans-serif" font-weight="700" font-size="14" letter-spacing="0.5">BLIK</text>
+                    </svg>
+                    <svg viewBox="0 0 48 32" width="40" height="27" xmlns="http://www.w3.org/2000/svg" class="payment-logo">
+                        <rect width="48" height="32" rx="4" fill="#1A1F71"/>
+                        <text x="24" y="21" fill="#fff" font-family="Arial,sans-serif" font-weight="700" font-size="13" text-anchor="middle" font-style="italic">VISA</text>
+                    </svg>
+                    <svg viewBox="0 0 48 32" width="40" height="27" xmlns="http://www.w3.org/2000/svg" class="payment-logo">
+                        <rect width="48" height="32" rx="4" fill="#fff" stroke="#e5e7eb"/>
+                        <circle cx="19" cy="16" r="9" fill="#EB001B" opacity="0.9"/>
+                        <circle cx="29" cy="16" r="9" fill="#F79E1B" opacity="0.9"/>
+                        <path d="M24 9.2a9 9 0 000 13.6 9 9 0 000-13.6z" fill="#FF5F00"/>
+                    </svg>
+                    <svg viewBox="0 0 48 32" width="40" height="27" xmlns="http://www.w3.org/2000/svg" class="payment-logo">
+                        <rect width="48" height="32" rx="4" fill="#fff" stroke="#e5e7eb"/>
+                        <text x="24" y="20" fill="#D40E2F" font-family="Arial,sans-serif" font-weight="700" font-size="9" text-anchor="middle">P24</text>
+                    </svg>
+                </div>
+                <p class="pricing-card__note">Bezpiecznie przez Stripe</p>
             </div>
         </div>
 
